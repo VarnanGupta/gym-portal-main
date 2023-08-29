@@ -25,13 +25,13 @@ function App() {
       {/* <BrowserRouter> */}
         <Routes>
           <Route
-            path="/gym-portal/login"
+            path="/gym-portal-main/login"
             // element={<Login onLogin={handleLogin} />}
             // Redirect to appropriate page if already authenticated
-            element={isAuthenticated ? <Navigate to="/gym-portal" /> : <Login onLogin={handleLogin} />}
+            element={isAuthenticated ? <Navigate to="/gym-portal-main" /> : <Login onLogin={handleLogin} />}
           />
           <Route
-            path="/gym-portal"
+            path="/gym-portal-main"
             element={
               isAuthenticated ? (
                 accountType === 'Admin' ? (
@@ -42,7 +42,7 @@ function App() {
                   <User onLogout={handleLogout} />
                 )
               ) : (
-                <Navigate to="/gym-portal/login" />
+                <Navigate to="/gym-portal-main/login" />
               )
             }
           />
